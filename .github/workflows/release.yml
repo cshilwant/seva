@@ -2,6 +2,7 @@ name: Go package
 
 on:
   push:
+    branches: [main]
     tags: ["v*.*.*"]
 
 jobs:

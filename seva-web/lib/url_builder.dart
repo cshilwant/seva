@@ -8,7 +8,7 @@ enum UrlType {
 String build_url(String app_name, UrlType url_type) {
   // build the requested url with the given app name
   String store_url =
-      "https://raw.githubusercontent.com/StaticRocket/seva-apps/main/";
+      "https://raw.githubusercontent.com/cshilwant/seva-apps/main/";
   store_url += "${app_name}/";
   if (url_type == UrlType.compose)
     store_url += "docker-compose.yml";

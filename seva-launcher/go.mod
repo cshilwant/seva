@@ -1,4 +1,4 @@
-module github.com/staticrocket/seva-launcher
+module github.com/cshilwant/seva-launcher
 
 go 1.19
 

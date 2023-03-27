@@ -48,7 +48,7 @@ Access the web interface using either:
 
 The store page is currently set to use the locally hosted design gallery page
 provided by the [seva-design-gallery
-container](https://github.com/StaticRocket/seva-design-gallery) on port 8001.
+container](https://github.com/cshilwant/seva-design-gallery) on port 8001.
 While this can be accessed without being launched from the Seva Control Center,
 it will not behave correctly for the following reason.
 
@@ -90,7 +90,7 @@ freely and distributed in a verity of ways.
  - Want to host your own storefront? Go right ahead. See the old
    [seva-store](https://github.com/StaticRocket/seva-store) for an example of
    the minimum requirements for interacting with the Seva Control Center and
-   [seva-apps](https://github.com/StaticRocket/seva-apps) for an example of the
+   [seva-apps](https://github.com/cshilwant/seva-apps) for an example of the
    app repo structure. (Though right now you'll have to change the store
    address that's compiled into the web interface and launcher. We're looking
    into making that more friendly.)

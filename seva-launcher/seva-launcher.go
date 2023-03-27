@@ -19,7 +19,7 @@ import (
 	"github.com/skratchdot/open-golang/open"
 )
 
-var store_url = "https://raw.githubusercontent.com/StaticRocket/seva-apps/main"
+var store_url = "https://raw.githubusercontent.com/cshilwant/seva-apps/main"
 var addr = flag.String("addr", "0.0.0.0:8000", "http service address")
 var no_browser = flag.Bool("no-browser", false, "do not launch browser")
 var docker_browser = flag.Bool("docker-browser", false, "force use of docker browser")

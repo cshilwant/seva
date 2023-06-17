@@ -139,7 +139,7 @@ func is_browser_loaded() bool {
 func launch_docker_browser() {
 	xdg_runtime_dir := os.Getenv("XDG_RUNTIME_DIR")
 	user, _ := user.Current()
-        log.Println(xdg_runtime_dir)
+        log.Println("XDG ", xdg_runtime_dir)
         log.Println(user.Uid)
         log.Println(user.Gid)
 
@@ -147,15 +147,13 @@ func launch_docker_browser() {
 		generate_docker_browser("--input", path_to_docker_browser)
 	}
 	output := docker_run("--rm", "--privileged", "--network", "host",
-		"-e", "XAUTHORITY",
 		"-e", "XDG_RUNTIME_DIR=/tmp",
-		"-e", "DISPLAY",
 		"-e", "WAYLAND_DISPLAY",
 		"-e", "https_proxy",
 		"-e", "http_proxy",
 		"-e", "no_proxy",
 		"-v", xdg_runtime_dir+":/tmp",
-		"--user="+user.Uid+":"+user.Gid,
+		"-u", "user",
 		"ghcr.io/cshilwant/seva-browser:"+docker_browser_tag,
 		"http://localhost:8000/#/",
 	)

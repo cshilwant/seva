@@ -45,7 +45,7 @@ func start_app(command WebSocketCommand) WebSocketCommand {
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		log.Println("Failed to start selected app!")
-		exit(1)
+		return command
 	}
 	output_s := strings.TrimSpace(string(output))
 	command.Response = append(command.Response, strings.Split(output_s, "\n")...)

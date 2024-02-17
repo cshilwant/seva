@@ -81,7 +81,7 @@ func launch_browser() {
 	if *docker_browser {
 		go launch_docker_browser()
 	} else {
-		err := open.Start("http://localhost:8000/#/")
+		err := open.StartWith("http://localhost:8000/#/", "/usr/bin/chromium")
 		if err != nil {
 			log.Println("Host browser not detected, trying to load & launch seva-browser packaged in default image")
 			go launch_docker_browser()

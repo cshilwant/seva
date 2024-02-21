@@ -16,7 +16,6 @@ import (
 	"syscall"
 
 	"github.com/gorilla/mux"
-	"github.com/skratchdot/open-golang/open"
 )
 
 //latest-tag for seva-browser
@@ -81,7 +80,8 @@ func launch_browser() {
 	if *docker_browser {
 		go launch_docker_browser()
 	} else {
-		err := open.StartWith("http://localhost:8000/#/", "/usr/bin/chromium --no-sandbox")
+		cmd := exec.Command("su", "weston", "-c", "/usr/bin/chromium http://localhost:8000/#/ &")
+		err := cmd.Run()
 		if err != nil {
 			log.Println("Host browser not detected, trying to load & launch seva-browser packaged in default image")
 			go launch_docker_browser()
@@ -263,11 +263,9 @@ func main() {
 	log.Println("Setting up working directory")
 	setup_working_directory()
 	docker_compose = prepare_compose()
-
 	if !*no_browser {
 		log.Println("Launching browser")
 		launch_browser()
 	}
-
-	handle_requests()
+	handle_requests()	
 }

@@ -254,7 +254,7 @@ func setup_proxy() {
 }
 
 func main() {
-	setup_exit_handler()
+	//setup_exit_handler()
 	check_env_vars()
 	flag.Parse()
 
